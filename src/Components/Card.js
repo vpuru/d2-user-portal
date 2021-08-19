@@ -9,11 +9,11 @@ const Card = ({ data }) => {
       {/* Indiviaul Cards */}
       {data.map((place) => {
         return (
-          <div className="w-full h-20 rounded-lg bg-white flex items-center p-2 border border-black duration-200 hover:shadow-md  hover:border-blue-500 ">
+          <div className="w-full h-18 rounded-lg bg-white flex items-center p-2 border border-black duration-200 hover:shadow-md  hover:border-blue-500 ">
             <div>
               <p className="font-bold">{place.name}</p>
               <div className="flex items-center space-x-1">
-                <img src={marker} className="h-4 w-4" />
+                <img src={marker} alt="marker" className="h-4 w-4" />
                 <p>{place.address}</p>
               </div>
             </div>

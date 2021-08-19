@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center">
           {/* Senator's picture */}
-          <p>Senator Hollier's Picture</p>
+          <p className="font-bold text-2xl">Senator Hollier's User Portal</p>
         </div>
         <div className="flex items-center space-x-8">
           {/* About Text */}
