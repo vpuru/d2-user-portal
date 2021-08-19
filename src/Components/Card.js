@@ -14,7 +14,9 @@ const Card = ({ data }) => {
               <p className="font-bold">{place.name}</p>
               <div className="flex items-center space-x-1">
                 <img src={marker} alt="marker" className="h-4 w-4" />
-                <p>{place.address}</p>
+                <p>
+                  {place.address} | {place.time}
+                </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import d2maplogo from "../d2map-logo.png";
+import banner from "../hollier-banner-transparent.png";
 import "./tailwind.css";
 
 const Navbar = () => {
@@ -18,7 +19,12 @@ const Navbar = () => {
         </div>
         <div className="flex items-center">
           {/* Senator's picture */}
-          <p className="font-bold text-2xl">Senator Hollier's User Portal</p>
+          {/* <p className="font-bold text-2xl">Senator Hollier's User Portal</p> */}
+          <img
+            src={banner}
+            alt="banner"
+            className="h-24 w-auto border border-black p-0 m-0"
+          />
         </div>
         <div className="flex items-center space-x-8">
           {/* About Text */}
