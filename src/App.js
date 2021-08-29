@@ -1,20 +1,27 @@
+import React from "react";
 import Navbar from "./Components/Navbar";
-import Map from "./Components/Map";
-import Dashboard from "./Components/Card";
-import Filter from "./Components/Filter";
-import data from "./locations";
-import "./App.css";
-import "./Components/tailwind.css";
+import HomeScreen from "./HomeScreen";
+import AboutScreen from "./AboutScreen";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+
+// const axios = require("axios");
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Filter />
-      <div className="py-4 mx-auto max-w-7xl px-4 flex justify-between space-x-4">
-        <Map data={data} />
-        <Dashboard data={data} />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomeScreen} />
+          <Route exact path="/about" component={AboutScreen} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
     </div>
   );
 }

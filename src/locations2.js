@@ -1,0 +1,33 @@
+export default {
+  data: [
+    {
+      positionLong: "-83.054199",
+      endDate: "9/8/2021 14:00:00",
+      eventCity: "Hamtrack",
+      address: "9625 Lumpkin St, Hamtramck, MI 48212",
+      ageGroup: "All ages",
+      positionLat: "42.39549",
+      organizerName: "Ali Ahmed",
+      startDate: "9/8/2021 10:00:00",
+      eventType: "In-Person",
+      link: "https://senatedems.com/hollier/",
+      description: "we are going to clean up Pulaski park",
+      organizationName: "Adam Hollier's Team",
+      attendeeInfo: "Bring a shovel",
+    },
+    {
+      positionLong: "-83.207584",
+      endDate: "9/1/2021",
+      eventCity: "Detroit",
+      address: "3688 Cedar Shake Dr.",
+      ageGroup: "Elderly (60+)",
+      positionLat: "42.690571",
+      organizerName: "Ali Ahmed",
+      startDate: "9/1/2021",
+      eventType: "Service",
+      description: "qweqweqw",
+      organizationName: "qweqwe",
+      attendeeInfo: "qQWEqwewqe",
+    },
+  ],
+};

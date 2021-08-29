@@ -3,19 +3,27 @@ import marker from "./marker.svg";
 import "./Card.css";
 import "./tailwind.css";
 
-const Card = ({ data }) => {
+const Card = ({ data, setCurrSelected }) => {
   return (
     <div className="card-container overflow-y-auto space-y-2 border">
       {/* Indiviaul Cards */}
-      {data.map((place) => {
+      {data.map((place, count) => {
         return (
-          <div className="w-full h-18 rounded-lg bg-white flex items-center p-2 border border-black duration-200 hover:shadow-md  hover:border-blue-500 ">
+          <div
+            key={count}
+            className="w-full h-18 rounded-lg bg-white flex items-center p-2 border border-black duration-200 hover:shadow-md  hover:border-blue-500 "
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setCurrSelected(count);
+            }}
+          >
             <div>
-              <p className="font-bold">{place.name}</p>
+              <p className="font-bold">{place.organizationName}</p>
               <div className="flex items-center space-x-1">
                 <img src={marker} alt="marker" className="h-4 w-4" />
                 <p>
-                  {place.address} | {place.time}
+                  {place.address} | {place.startDate}{" "}
+                  {place.endDate && `- ${place.endDate}`}
                 </p>
               </div>
             </div>
