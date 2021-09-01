@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./tailwind.css";
 
-const Button = ({ text, preset, colorOn, colorOff, filter, setFilter }) => {
+const Button = ({
+  text,
+  preset,
+  colorOn,
+  colorOff,
+  filter,
+  setFilter,
+  updateFilter,
+}) => {
   const [active, setActive] = useState(preset || false);
 
   useEffect(() => {
@@ -10,6 +18,8 @@ const Button = ({ text, preset, colorOn, colorOff, filter, setFilter }) => {
     let temp = filter;
     temp[key] = active;
     setFilter(temp);
+
+    updateFilter();
   });
 
   return (
@@ -17,7 +27,7 @@ const Button = ({ text, preset, colorOn, colorOff, filter, setFilter }) => {
       onClick={() => {
         setActive(!active);
       }}
-      className={`text-sm px-2 sm:px-4 lg:px-6 h-12 lg:h-8 rounded-lg duration-200 ${
+      className={`text-xs px-0.5 sm:text-sm sm:px-4 lg:px-6 h-12 lg:h-12 rounded-lg duration-200 ${
         active ? colorOn : colorOff
       } text-white hover:shadow-lg`}
     >
@@ -26,7 +36,7 @@ const Button = ({ text, preset, colorOn, colorOff, filter, setFilter }) => {
   );
 };
 
-const Filter = ({ filter, setFilter }) => {
+const Filter = ({ filter, setFilter, updateFilter }) => {
   return (
     <div className="flex-col justify-center mx-auto max-w-7xl my-3 px-3 mb-0 space-x-3">
       <div className="mb-2 flex justify-center space-x-1 sm:space-x-3">
@@ -37,6 +47,7 @@ const Filter = ({ filter, setFilter }) => {
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
           text="Grosse Point"
@@ -45,6 +56,7 @@ const Filter = ({ filter, setFilter }) => {
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
           text="Hamtramck"
@@ -53,14 +65,16 @@ const Filter = ({ filter, setFilter }) => {
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
-          text="Hamtramck Woods"
+          text="Harper Woods"
           preset={true}
           colorOn="bg-gray-800"
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
           text="Highland Park"
@@ -69,16 +83,18 @@ const Filter = ({ filter, setFilter }) => {
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
       </div>
       <div className="mx-auto flex justify-center space-x-3">
         <Button
-          text="In Person"
+          text="In-Person"
           preset={true}
           colorOn="bg-blue-600"
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
           text="Virtual"
@@ -87,22 +103,25 @@ const Filter = ({ filter, setFilter }) => {
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
-          text="Block Club"
+          text="Service"
           preset={true}
           colorOn="bg-blue-600"
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
         <Button
-          text="Resources"
+          text="Resource"
           preset={true}
           colorOn="bg-blue-600"
           colorOff="bg-gray-300"
           filter={filter}
           setFilter={setFilter}
+          updateFilter={updateFilter}
         />
       </div>
     </div>

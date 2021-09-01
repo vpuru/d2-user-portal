@@ -3,10 +3,13 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./Map.css";
 import "./tailwind.css";
 
+const moment = require("moment");
+
 let markersRefs = [];
 
 const Map = ({ data, currSelected }) => {
   useEffect(() => {
+    console.log("Map effect");
     // change our currently selected item if valid
     markersRefs[currSelected] && markersRefs[currSelected].openPopup();
   }, [currSelected]);
@@ -31,13 +34,40 @@ const Map = ({ data, currSelected }) => {
             ref={(ref) => (markersRefs[id] = ref)}
           >
             <Popup closeOnClick={true}>
-              <div className="">
-                <p className="font-medium text-lg my-0">
-                  {place.organizationName}
-                </p>
-                <p>{place.address}</p>
+              <div>
+                <div className="text-center">
+                  <p className="text-lg my-0 font-bold">
+                    {place.eventName || "No event name"}
+                  </p>
+                </div>
                 <p>
-                  {place.startDate} {place.endDate && `- ${place.endDate}`}
+                  <strong>Address:</strong> {place.address}
+                </p>
+                <p>
+                  <strong>Date: </strong>
+                  {moment(place.startDate).format("MM/DD/YYYY")}
+                  {" - "}
+                  {moment(place.endDate).format("MM/DD/YYYY")}
+                </p>
+                <p>
+                  <strong>Time: </strong>
+                  {moment(place.startDate).format("LT")}
+                  {" to "}
+                  {moment(place.endDate).format("LT")}
+                </p>
+                <p>
+                  <strong>Organization Name:</strong> {place.organizationName}
+                </p>
+                <p>
+                  <strong>Info: </strong>
+                  {place.attendeeInfo}
+                </p>
+                <p>
+                  <strong>Link: </strong> <a href={place.link}>{place.link}</a>
+                </p>
+                <p>
+                  <strong>Address: </strong>
+                  {place.address}
                 </p>
               </div>
             </Popup>

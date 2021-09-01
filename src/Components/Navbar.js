@@ -31,49 +31,19 @@ const Navbar = () => {
           </a>
         </div>
         {/* Two buttons */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="flex items-center space-x-8">
           {/* About Text */}
           <a href="/about">
-            <p className="mr-4 duration-200 transform hover:-translate-y-1">
+            <p className="hidden lg:block mr-4 duration-200 transform hover:-translate-y-1">
               About
             </p>
           </a>
-          <a href="https://d2map.xyz/">
+          <a href="https://d2mapbeta.xyz/">
             {/* Try me button */}
             <div className="bg-blue-500 rounded-lg shadow-lg duration-200 transform hover:-translate-y-1 hover:shadow-lg hover:bg-blue-600">
               <p className="text-white px-12 py-3 font-sans">Try the App!</p>
             </div>
           </a>
-        </div>
-
-        {/* Menu Icon */}
-        <div className="lg:hidden w-28 flex items-center justify-end ">
-          <a href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="lg:hidden h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              onClick={() => setOpen(!open)}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-      {/* Drop down menu */}
-      <div className={open ? `lg:hidden w-full bg-gray-100` : "hidden"}>
-        <div className="w-full h-20 flex justify-center items-center">
-          About Page
-        </div>
-        <div className="w-full h-20 flex justify-center items-center">
-          Try the App!
         </div>
       </div>
     </nav>

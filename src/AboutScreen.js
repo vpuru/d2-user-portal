@@ -16,7 +16,6 @@ const AboutScreen = () => {
         and collaborative community. This project is not for profit and strictly
         for the greater good of the community members it serves.
       </div>
-      <div className="border border-black h-full">something</div>
     </div>
   );
 };
