@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     // get data using api
     axios
-      .get("https://0ou9ukm8jh.execute-api.us-east-2.amazonaws.com/dev/details")
+      .get("api link here")
       .then((data) => {
         setCount(count + 1);
         console.log(data.data);
